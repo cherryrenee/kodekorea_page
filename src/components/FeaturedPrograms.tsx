@@ -1,12 +1,13 @@
+import React, { useState, useEffect } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi,
 } from './ui/carousel';
+import './FeaturedPrograms.css';
 
 interface ProgramCardProps {
   image: string;
@@ -18,31 +19,31 @@ interface ProgramCardProps {
 
 function ProgramCard({ image, title, description, duration, level }: ProgramCardProps) {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#CBD5E1]/30">
-      {/* Image */}
-      <div className="relative h-48 w-full overflow-hidden">
+    <div className="program-card">
+      {/* Image - 모바일: 위, 데스크탑: 왼쪽 */}
+      <div className="program-card-image-container">
         <ImageWithFallback
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className="program-card-image"
         />
-        <div className="absolute top-3 right-3 bg-[#FFB800] text-[#0F172A] px-3 py-1 rounded-full text-[12px] font-medium">
+        <div className="program-card-level-badge">
           {level}
         </div>
       </div>
       
-      {/* Content */}
-      <div className="p-6">
-        <h3 className="text-[#0F172A] text-[20px] font-semibold mb-2">
+      {/* Content - 모바일: 아래, 데스크탑: 오른쪽 */}
+      <div className="program-card-content">
+        <h3 className="program-card-title">
           {title}
         </h3>
-        <p className="text-[#475569] text-[14px] mb-4 leading-relaxed">
+        <p className="program-card-description">
           {description}
         </p>
-        <div className="flex items-center justify-between">
-          <span className="text-[#475569] text-[14px]">{duration}</span>
-          <button className="text-[#345FFF] flex items-center gap-1 text-[14px] font-medium hover:gap-2 transition-all">
-            Learn More <ArrowRight className="w-4 h-4" />
+        <div className="program-card-footer">
+          <span className="program-card-duration">{duration}</span>
+          <button className="program-card-button">
+            Learn More <ArrowRight className="program-card-button-icon" />
           </button>
         </div>
       </div>
@@ -89,45 +90,44 @@ export function FeaturedPrograms() {
   }, [api]);
 
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-[390px] mx-auto px-4">
-        <div className="mb-8 px-2">
-          <h2 className="text-[#0F172A] text-[28px] font-semibold mb-2">
+    <section className="featured-programs-section">
+      <div className="featured-programs-container">
+        <div className="featured-programs-header">
+          <h2 className="featured-programs-title">
             Featured Programs
           </h2>
-          <p className="text-[#475569] text-[14px]">
+          <p className="featured-programs-description">
             Explore our most popular training courses
           </p>
         </div>
         
+        {/* Carousel - All Screen Sizes */}
         <Carousel
           setApi={setApi}
           opts={{
             loop: true,
             align: 'center',
           }}
-          className="w-full"
+          className="featured-programs-carousel"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="carousel-content-wrapper">
             {programs.map((program, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%]">
-                <ProgramCard {...program} />
+              <CarouselItem key={index} className="carousel-item-wrapper">
+                <div className="carousel-item-inner">
+                  <ProgramCard {...program} />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
 
         {/* Dots indicator */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="featured-programs-dots">
           {programs.map((_, index) => (
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                current === index
-                  ? 'bg-[#345FFF] w-6'
-                  : 'bg-[#CBD5E1]'
-              }`}
+              className={`featured-programs-dot ${current === index ? 'active' : ''}`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

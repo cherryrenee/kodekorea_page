@@ -1,11 +1,12 @@
+import React, { useState, useEffect } from 'react';
 import { Star } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi,
 } from './ui/carousel';
+import './ReviewsSection.css';
 
 interface ReviewCardProps {
   name: string;
@@ -17,36 +18,36 @@ interface ReviewCardProps {
 
 function ReviewCard({ name, role, rating, quote, avatar }: ReviewCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#CBD5E1]/30">
+    <div className="review-card">
       {/* Rating */}
-      <div className="flex gap-1 mb-4">
+      <div className="review-card-rating">
         {[...Array(5)].map((_, index) => (
           <Star
             key={index}
-            className={`w-4 h-4 ${
+            className={`review-card-star ${
               index < rating
-                ? 'fill-[#FFB800] text-[#FFB800]'
-                : 'fill-[#CBD5E1] text-[#CBD5E1]'
+                ? 'review-card-star-filled'
+                : 'review-card-star-empty'
             }`}
           />
         ))}
       </div>
       
       {/* Quote */}
-      <p className="text-[#475569] text-[15px] leading-relaxed mb-6 italic">
+      <p className="review-card-quote">
         "{quote}"
       </p>
       
       {/* Profile */}
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#345FFF] to-[#1D3FE3] flex items-center justify-center text-white font-semibold">
+      <div className="review-card-profile">
+        <div className="review-card-avatar">
           {avatar}
         </div>
         <div>
-          <div className="text-[#0F172A] text-[15px] font-semibold">
+          <div className="review-card-name">
             {name}
           </div>
-          <div className="text-[#475569] text-[13px]">
+          <div className="review-card-role">
             {role}
           </div>
         </div>
@@ -101,45 +102,44 @@ export function ReviewsSection() {
   }, [api]);
 
   return (
-    <section className="py-12 bg-[#F8FAFC]">
-      <div className="max-w-[390px] mx-auto px-4">
-        <div className="mb-8 px-2">
-          <h2 className="text-[#0F172A] text-[28px] font-semibold mb-2">
+    <section className="reviews-section">
+      <div className="reviews-container">
+        <div className="reviews-header">
+          <h2 className="reviews-title">
             Student Success Stories
           </h2>
-          <p className="text-[#475569] text-[14px]">
+          <p className="reviews-description">
             Hear from our graduates
           </p>
         </div>
         
+        {/* Carousel - All Screen Sizes */}
         <Carousel
           setApi={setApi}
           opts={{
             loop: true,
             align: 'center',
           }}
-          className="w-full"
+          className="reviews-carousel"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="reviews-carousel-content">
             {reviews.map((review, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%]">
-                <ReviewCard {...review} />
+              <CarouselItem key={index} className="reviews-carousel-item">
+                <div className="reviews-carousel-item-inner">
+                  <ReviewCard {...review} />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
 
         {/* Dots indicator */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="reviews-dots">
           {reviews.map((_, index) => (
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                current === index
-                  ? 'bg-[#345FFF] w-6'
-                  : 'bg-[#CBD5E1]'
-              }`}
+              className={`reviews-dot ${current === index ? 'active' : ''}`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

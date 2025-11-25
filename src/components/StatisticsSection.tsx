@@ -1,4 +1,6 @@
+import React from 'react';
 import { Users, Building2, Star } from 'lucide-react';
+import './StatisticsSection.css';
 
 interface StatCardProps {
   icon: React.ReactNode;
@@ -8,16 +10,16 @@ interface StatCardProps {
 
 function StatCard({ icon, value, label }: StatCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#CBD5E1]/30">
-      <div className="flex items-center gap-3 mb-3">
-        <div className="w-10 h-10 rounded-full bg-[#345FFF]/10 flex items-center justify-center text-[#345FFF]">
+    <div className="stat-card">
+      <div className="stat-card-icon-container">
+        <div className="stat-card-icon-wrapper">
           {icon}
         </div>
       </div>
-      <div className="text-[#0F172A] text-[28px] font-semibold mb-1">
+      <div className="stat-card-value">
         {value}
       </div>
-      <div className="text-[#475569] text-[14px]">
+      <div className="stat-card-label">
         {label}
       </div>
     </div>
@@ -26,8 +28,8 @@ function StatCard({ icon, value, label }: StatCardProps) {
 
 export function StatisticsSection() {
   return (
-    <section className="px-6 py-12 bg-[#F8FAFC]">
-      <div className="max-w-[390px] mx-auto grid grid-cols-1 gap-4">
+    <section className="statistics-section">
+      <div className="statistics-container">
         <StatCard 
           icon={<Users className="w-5 h-5" />}
           value="5,200+"
