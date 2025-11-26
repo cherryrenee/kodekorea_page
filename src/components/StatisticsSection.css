@@ -1,15 +1,21 @@
 /* Statistics Section */
 .statistics-section {
-  padding: 3rem 1.5rem;
+  padding: 10rem 1.5rem;
   background-color: #F8FAFC;
+}
+
+@media (max-width: 767px) {
+  .statistics-section {
+    padding: 3rem 1.5rem;
+  }
 }
 
 .statistics-container {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
+  grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
@@ -30,6 +36,9 @@
   .statistics-container {
     padding: 0 5rem;
   }
+.stat-list {
+  display: grid;
+  gap: 1rem;
 }
 
 .stat-card {
@@ -56,6 +65,7 @@
   align-items: center;
   justify-content: center;
   color: #345FFF;
+}
 }
 
 .stat-card-value {
@@ -86,5 +96,94 @@
   .stat-card-label {
     font-size: 1rem;
   }
+}
+
+.statistics-left,
+.statistics-right {
+  width: 100%;
+}
+
+.statistics-container {
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .statistics-container {
+    grid-template-columns: 1fr 1.6fr;
+  }
+
+  .statistics-left {
+    order: 1;
+  }
+
+  .statistics-right {
+    order: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .statistics-right {
+    order: -1;
+  }
+}
+
+.stat-donut-card {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 1rem 0;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .stat-donut-card {
+    padding: 0;  }
+}
+
+.stat-donut-graphic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.stat-donut-track {
+  fill: none;
+  stroke: #E2E8F0;
+  stroke-width: 20;
+}
+
+.stat-donut-fill {
+  fill: none;
+  stroke: #345FFF;
+  stroke-width: 20;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.stat-donut-text {
+  fill: #0F172A;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.stat-donut-title {
+  color: #0F172A;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  text-align: center;
+}
+
+.stat-donut-description {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: center;
 }
 

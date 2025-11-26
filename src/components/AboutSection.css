@@ -1,7 +1,13 @@
 /* About Section */
 .about-section {
-  padding: 3rem 0;
+  padding: 10rem 0;
   background-color: white;
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 3rem 0;
+  }
 }
 
 .about-container {

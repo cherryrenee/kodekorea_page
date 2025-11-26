@@ -22,7 +22,7 @@ export function HeroSection() {
           Transform Your Career in Tech
         </h1>
         <p className="hero-description">
-          Master cutting-edge IT skills with industry-leading bootcamps and corporate training programs.
+          미래의 일은 사람이 혼자 만드는 것이 아닙니다. AI와 나란히 걷는 새로운 협업을 배우는 시대의 교육.
         </p>
         <Button className="hero-button">
           Get Started Today

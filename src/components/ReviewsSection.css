@@ -1,7 +1,13 @@
 /* Reviews Section */
 .reviews-section {
-  padding: 3rem 0;
+  padding: 10rem 0;
   background-color: #F8FAFC;
+}
+
+@media (max-width: 767px) {
+  .reviews-section {
+    padding: 3rem 0;
+  }
 }
 
 .reviews-container {

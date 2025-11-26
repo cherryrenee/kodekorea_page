@@ -1,7 +1,13 @@
 /* Partners Section */
 .partners-section {
-  padding: 3rem 0;
+  padding: 10rem 0;
   background-color: #F8FAFC;
+}
+
+@media (max-width: 767px) {
+  .partners-section {
+    padding: 3rem 0;
+  }
 }
 
 .partners-container {
