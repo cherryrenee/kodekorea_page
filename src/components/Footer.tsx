@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import './Footer.css';
 
+const logoSrc = '/kodekorealogo.png';
+
 export function Footer() {
+  const [logoError, setLogoError] = useState(false);
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-grid">
           {/* Logo/Brand */}
           <div className="footer-brand">
-            <h3 className="footer-brand-title">
-              KODE KOREA
-            </h3>
+            <div className="footer-brand-title">
+              {logoError ? (
+                'KODE KOREA'
+              ) : (
+                <img
+                  src={logoSrc}
+                  alt="KODE KOREA 로고"
+                  className="footer-logo-image"
+                  onError={() => setLogoError(true)}
+                />
+              )}
+            </div>
             <p className="footer-brand-description">
               Empowering the next generation of tech professionals
             </p>
@@ -26,7 +39,7 @@ export function Footer() {
                 </div>
                 <div>
                   <div className="footer-contact-label">Email</div>
-                  <div className="footer-contact-value">hello@techlearn.com</div>
+                  <div className="footer-contact-value">seongho.cho@kodekorea.kr</div>
                 </div>
               </div>
               
@@ -36,7 +49,7 @@ export function Footer() {
                 </div>
                 <div>
                   <div className="footer-contact-label">Phone</div>
-                  <div className="footer-contact-value">+1 (555) 123-4567</div>
+                  <div className="footer-contact-value">010-</div>
                 </div>
               </div>
               
@@ -46,7 +59,7 @@ export function Footer() {
                 </div>
                 <div>
                   <div className="footer-contact-label">Location</div>
-                  <div className="footer-contact-value">San Francisco, CA</div>
+                  <div className="footer-contact-value">부산시 금정구 중앙대로 1793번길 38 204호</div>
                 </div>
               </div>
             </div>

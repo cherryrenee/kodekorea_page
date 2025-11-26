@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import './NavigationSection.css';
+
+const logoSrc = '/kodekorealogo.png';
 
 function Logo() {
   const [imageError, setImageError] = useState(false);
 
   if (imageError) {
-    return <div className="navigation-logo-text">KODE KOREA</div>;
+    return null;
   }
 
   return (
     <img
-      src="/logo.png"
-      alt="KODE KOREA"
+      src={logoSrc}
+      alt="KODE KOREA 로고"
       className="navigation-logo-image"
       onError={() => setImageError(true)}
     />

@@ -68,6 +68,13 @@
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .hero-content {
+    justify-content: flex-end;
+    padding-bottom: 4rem;
+  }
+}
+
 @media (min-width: 768px) {
   .hero-content {
     padding: 0 3rem;
