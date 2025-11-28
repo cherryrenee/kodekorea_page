@@ -12,16 +12,10 @@ function StatCard({ icon, value, label }: StatCardProps) {
   return (
     <div className="stat-card">
       <div className="stat-card-icon-container">
-        <div className="stat-card-icon-wrapper">
-          {icon}
-        </div>
+        <div className="stat-card-icon-wrapper">{icon}</div>
       </div>
-      <div className="stat-card-value">
-        {value}
-      </div>
-      <div className="stat-card-label">
-        {label}
-      </div>
+      <div className="stat-card-value">{value}</div>
+      <div className="stat-card-label">{label}</div>
     </div>
   );
 }
@@ -36,12 +30,7 @@ function DonutCard() {
     <div className="stat-donut-card">
       <div className="stat-donut-graphic">
         <svg width="340" height="340" viewBox="0 0 340 340">
-          <circle
-            className="stat-donut-track"
-            cx="170"
-            cy="170"
-            r={radius}
-          />
+          <circle className="stat-donut-track" cx="170" cy="170" r={radius} />
           <circle
             className="stat-donut-fill"
             cx="170"
@@ -77,12 +66,12 @@ export function StatisticsSection() {
       <div className="statistics-container">
         <div className="statistics-left">
           <div className="stat-list">
-            <StatCard 
+            <StatCard
               icon={<Users className="w-5 h-5" />}
               value="5,200+"
               label="Students Trained"
             />
-            <StatCard 
+            <StatCard
               icon={<Building2 className="w-5 h-5" />}
               value="180+"
               label="Partner Companies"
