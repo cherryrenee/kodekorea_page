@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationSection } from './components/NavigationSection';
-import { HeroSection } from './components/HeroSection';
+import { BottomUpHero } from './components/BottomUpHero';
 import { StatisticsSection } from './components/StatisticsSection';
 import { FeaturedPrograms } from './components/FeaturedPrograms';
 import { PartnersSection } from './components/PartnersSection';
@@ -11,9 +11,9 @@ import { ChatWidget } from './components/ChatWidget';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white w-full">
+    <div className="min-h-screen bg-background w-full">
       <NavigationSection />
-      <HeroSection />
+      <BottomUpHero />
       <StatisticsSection />
       <FeaturedPrograms />
       <PartnersSection />

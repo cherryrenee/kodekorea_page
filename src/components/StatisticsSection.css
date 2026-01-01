@@ -1,7 +1,6 @@
-/* Statistics Section */
 .statistics-section {
   padding: 10rem 1.5rem;
-  background-color: #F8FAFC;
+  background-color: var(--background);
 }
 
 @media (max-width: 767px) {
@@ -44,7 +43,7 @@
 }
 
 .stat-card {
-  background-color: white;
+  background-color: var(--card);
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -90,7 +89,7 @@
 }
 
 .stat-card-value {
-  color: #0F172A;
+  color: var(--foreground);
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -109,7 +108,7 @@
 }
 
 .stat-card-label {
-  color: #475569;
+  color: var(--muted-foreground);
   font-size: 0.875rem;
 }
 
@@ -222,13 +221,13 @@
 }
 
 .stat-donut-text {
-  fill: #0F172A;
+  fill: var(--foreground);
   font-size: 3.6rem;
   font-weight: 700;
 }
 
 .stat-donut-title {
-  color: #0F172A;
+  color: var(--foreground);
   font-size: 2.7rem;
   font-weight: 700;
   margin-bottom: 0.35rem;
@@ -236,7 +235,7 @@
 }
 
 .stat-donut-description {
-  color: #475569;
+  color: var(--muted-foreground);
   font-size: 1.8rem;
   line-height: 1.6;
   text-align: center;

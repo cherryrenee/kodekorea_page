@@ -1,0 +1,140 @@
+/* BottomUpHero.css */
+.bottom-up-hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #020202;
+    /* Deep black background */
+    perspective: 1000px;
+}
+
+/* Digital Grid Background */
+.digital-grid-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(rgba(52, 95, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(52, 95, 255, 0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center bottom;
+    transform: rotateX(60deg) translateY(-50%) translateZ(-200px);
+    transform-origin: center top;
+    animation: gridMove 20s linear infinite;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 100%);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: rotateX(60deg) translateY(0) translateZ(-200px);
+    }
+
+    100% {
+        transform: rotateX(60deg) translateY(50px) translateZ(-200px);
+    }
+}
+
+/* Content Container */
+.hero-content-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* Scramble Text Style via Neon Gradient */
+.scramble-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.scramble-line {
+    font-family: 'Anemone', sans-serif;
+    font-size: 2.5rem;
+    /* Slightly smaller to fit 3 lines */
+    line-height: 1.2;
+
+    /* Neon Gradient Setup */
+    background: linear-gradient(90deg,
+            #ffffff 0%,
+            #345FFF 50%,
+            #ffffff 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation: shine 5s linear infinite;
+    text-shadow: 0 0 20px rgba(52, 95, 255, 0.5);
+    word-break: keep-all;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@media (min-width: 768px) {
+    .scramble-line {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .scramble-line {
+        font-size: 5.5rem;
+    }
+}
+
+/* Blinking Cursor */
+.blinking-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: #ffffff;
+    margin-left: 0.2rem;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero-sub-description {
+    color: rgb(238, 238, 238);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-sub-description {
+        font-size: 1.5rem;
+    }
+}
