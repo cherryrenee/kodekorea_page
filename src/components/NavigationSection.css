@@ -1,6 +1,7 @@
 /* Navigation Section */
 .navigation-section {
-  position: fixed;
+  position: absolute;
+  /* Changed from fixed to absolute so it scrolls with page */
   top: 0;
   left: 0;
   right: 0;
@@ -19,6 +20,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 }
 
@@ -213,4 +217,3 @@
 .navigation-link-mobile:hover {
   background-color: #F8FAFC;
 }
-

@@ -2,8 +2,8 @@
 .bottom-up-hero {
     position: relative;
     width: 100%;
-    height: 600px;
-    min-height: 80vh;
+    /* height: 600px; - Removed fixed height to prevent clipping */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +53,10 @@
     align-items: center;
     text-align: center;
     padding: 0 1rem;
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Scramble Text Style via Neon Gradient */
@@ -66,7 +70,7 @@
 
 .scramble-line {
     font-family: 'Anemone', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
     /* Slightly smaller to fit 3 lines */
     line-height: 1.2;
 
@@ -101,6 +105,19 @@
     .scramble-line {
         font-size: 5.5rem;
     }
+
+    /* Change alignment to top-down for better control */
+    .bottom-up-hero {
+        align-items: flex-start;
+        padding-top: 25vh;
+        /* Push content down visually */
+    }
+
+    .hero-content-container {
+        margin: 0 auto;
+        /* Reset margin, keep centering */
+        padding: 0 1rem;
+    }
 }
 
 /* Blinking Cursor */
@@ -128,13 +145,18 @@
 
 .hero-sub-description {
     color: rgb(238, 238, 238);
-    font-size: 0.8rem;
+    font-size: 1.125rem;
     line-height: 1.6;
     margin-top: 1rem;
 }
 
+
 @media (min-width: 768px) {
     .hero-sub-description {
         font-size: 1.5rem;
+    }
+
+    .only-mobile {
+        display: none;
     }
 }

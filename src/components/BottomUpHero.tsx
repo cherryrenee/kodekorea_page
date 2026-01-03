@@ -75,7 +75,7 @@ export function BottomUpHero() {
                 </div>
 
                 <p className="hero-sub-description" style={{ opacity: activeLine >= PHRASES.length ? 1 : 0, transition: 'opacity 1s ease' }}>
-                    AI·데이터·DX 기반 실무 교육 및 자동화 워크샵 전문, 코드코리아
+                    AI·데이터·DX 기반 실무 교육 및 자동화 워크샵 전문, <br className='only-mobile' />코드코리아
                 </p>
             </div>
         </section>

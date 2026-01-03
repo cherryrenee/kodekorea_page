@@ -1,264 +1,222 @@
-.statistics-section {
-  padding: 10rem 1.5rem;
-  background-color: var(--background);
-}
-
-@media (max-width: 767px) {
-  .statistics-section {
-    padding: 3rem 1.5rem;
-  }
-}
-
-.statistics-container {
-  width: 100%;
-  margin: 0 auto;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
+/* StatisticsSection.css */
+.statistics-section-new {
+  padding: 10rem 0 8rem;
+  /* Mobile default */
+  background-color: #020202;
+  /* Night Mode Background */
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  .statistics-container {
-    padding: 0 3rem;
-    gap: 1.5rem;
+  .statistics-section-new {
+    padding: 20rem 0 8rem;
+    /* Tablet/Desktop padding */
   }
 }
 
 @media (min-width: 1024px) {
-  .statistics-container {
-    padding: 0 4rem;
-    gap: 2rem;
+  .statistics-section-new {
+    padding: 25rem 0 10rem;
+    /* Increased Desktop spacing */
   }
 }
 
-@media (min-width: 1280px) {
-  .statistics-container {
-    padding: 0 5rem;
-  }
-}
-
-.stat-list {
-  display: grid;
-  gap: 1rem;
-}
-
-.stat-card {
-  background-color: var(--card);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(203, 213, 225, 0.3);
+.statistics-container-new {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 6rem;
+}
+
+/* 1. Counting Section */
+.stats-counting-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
+  padding: 0 1.5rem;
 }
 
-.stat-card-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 0.5rem;
+.stats-counting-title {
+  font-size: 2rem;
+  /* Updated to 3rem to match Hero mobile size */
+  font-weight: 700;
+  color: #FFFFFF;
+  /* White text for dark mode */
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  /* Prevent awkward word breaks */
 }
 
-@media (min-width: 768px) {
-  .stat-card {
-    align-items: flex-start;
-    text-align: left;
-    gap: 0.25rem;
-  }
+.stats-number-highlight {
+  display: inline;
+  /* Changed from inline-block to inline to prevent awkward wrapping */
+  /* color: #345FFF; - Removed solid color */
+  font-size: inherit;
+  /* Inherit font size from parent (2rem) */
+  font-weight: 800;
+  margin-right: 0.5rem;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  line-height: inherit;
 
-  .stat-card-icon-container {
-    justify-content: flex-start;
-    margin-bottom: 0.75rem;
-  }
+  /* Blue Gradient Text */
+  background: linear-gradient(90deg, #345FFF 0%, #00C6FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 0 0 30px rgba(52, 95, 255, 0.3);
+  /* Softer glow that works with gradient */
 }
 
-.stat-card-icon-wrapper {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
-  background-color: rgba(52, 95, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #345FFF;
+.stats-text-suffix {
+  display: inline;
+  /* Changed from inline-block to inline to flow with number */
 }
 
-.stat-card-value {
-  color: var(--foreground);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-@media (min-width: 768px) {
-  .stat-card-value {
-    font-size: 1.875rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .stat-card-value {
-    font-size: 2.25rem;
-  }
-}
-
-.stat-card-label {
-  color: var(--muted-foreground);
-  font-size: 0.875rem;
-}
-
-@media (min-width: 768px) {
-  .stat-card-label {
-    font-size: 1rem;
-  }
-}
-
-.statistics-left,
-.statistics-right {
-  width: 100%;
-}
-
-.statistics-container {
-  align-items: start;
-}
-
-@media (min-width: 768px) {
-  .statistics-container {
-    grid-template-columns: 1fr 1.6fr;
-    align-items: center;
-  }
-}
-
-@media (max-width: 767px) {
-  .statistics-container {
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .stat-list {
-    width: 100%;
-  }
-
-  .statistics-right {
-    order: -1;
-  }
-}
-
-.stat-donut-card {
-  background: transparent;
-  border-radius: 1.25rem;
-  padding: 0;
-  box-shadow: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-@media (max-width: 767px) {
-  .stat-donut-card {
-    padding: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .stat-donut-card {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-  }
-}
-
-.stat-donut-graphic {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: clamp(260px, 70vw, 360px);
-  height: clamp(260px, 70vw, 360px);
-}
-
-.stat-donut-graphic svg {
+.mobile-break {
   display: block;
-  margin: 0 auto;
 }
 
-@media (max-width: 767px) {
-  .stat-donut-graphic {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.stat-donut-track {
-  fill: none;
-  stroke: #E2E8F0;
-  stroke-width: 40;
-}
-
-.stat-donut-fill {
-  fill: none;
-  stroke: #345FFF;
-  stroke-width: 40;
-  stroke-linecap: round;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  transition: stroke-dashoffset 0.3s ease;
-}
-
-.stat-donut-text {
-  fill: var(--foreground);
-  font-size: 3.6rem;
-  font-weight: 700;
-}
-
-.stat-donut-title {
-  color: var(--foreground);
-  font-size: 2.7rem;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-  text-align: center;
-}
-
-.stat-donut-description {
-  color: var(--muted-foreground);
-  font-size: 1.8rem;
+.stats-counting-description {
+  font-size: 1.125rem;
+  color: #94A3B8;
+  /* Lighter gray for dark mode */
   line-height: 1.6;
-  text-align: center;
+  word-break: keep-all;
+  padding-bottom: 8rem;
 }
 
-@media (max-width: 767px) {
-  .stat-donut-track {
-    stroke-width: 28;
+@media (min-width: 768px) {
+  .stats-counting-title {
+    font-size: 3.5rem;
   }
 
-  .stat-donut-fill {
-    stroke-width: 28;
+  .stats-number-highlight {
+    font-size: 5rem;
   }
 
-  .stat-donut-text {
-    font-size: 1.8rem;
+  .mobile-break {
+    display: none;
   }
 
-  .stat-donut-title {
-    font-size: 1.35rem;
+  .stats-counting-description {
+    font-size: 1.25rem;
+    padding-bottom: 10rem;
+  }
+}
+
+/* 2. Partner Slider */
+.stats-partners-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stats-partners-label {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 5rem;
+}
+
+.stats-slider-track {
+  display: flex;
+  gap: 0;
+  /* Remove flex gap, use padding in items for spacing */
+  width: max-content;
+  animation: scroll 60s linear infinite;
+  /* Slower scroll for better readability */
+}
+
+.stats-slider-track:hover {
+  animation-play-state: paused;
+}
+
+.stats-partner-item {
+  flex-shrink: 0;
+  width: 250px;
+  /* Increased width */
+  height: 120px;
+  /* Increased height */
+  background-color: transparent;
+  /* Removed background */
+  border: none;
+  /* Removed border */
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  /* Add padding to enforce visual spacing between logos */
+}
+
+/* Removed hover transform effect */
+
+.stats-partner-logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  /* Internal padding for logo image */
+}
+
+.stats-partner-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Make logos white/monochrome on dark bg */
+  filter: grayscale(100%) invert(1) brightness(2);
+  /* Use mix-blend-mode to try to hide white backgrounds if present and inverted to black */
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+/* Specific adjustment for Korea Science Academy logo */
+img[src*="한국_과학_영재학교"] {
+  transform: scale(1.1, 0.8);
+  /* Still stretched but smaller overall */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
 
-  .stat-donut-description {
-    font-size: 0.95rem;
+  100% {
+    transform: translateX(-50%);
+    /* Move exactly half since gap is 0 */
   }
+}
+
+/* Gradient Masks for fading effect at edges - matching #020202 */
+.stats-partners-slider-wrapper::before,
+.stats-partners-slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stats-partners-slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #020202, transparent);
+}
+
+.stats-partners-slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #020202, transparent);
 }

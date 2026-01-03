@@ -1,0 +1,116 @@
+.why-kodekorea-section {
+  padding: 6rem 1.5rem;
+  /* Mobile padding reduced */
+  background-color: #F8FAFC;
+}
+
+.why-kodekorea-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.why-kodekorea-header {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.why-kodekorea-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.why-kodekorea-description {
+  font-size: 1.125rem;
+  color: #64748B;
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Feature Card - Maintaining the 'pretty' style */
+.feature-card {
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  border: 1px solid #F1F5F9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -5px rgba(52, 95, 255, 0.15);
+  border-color: transparent;
+}
+
+.feature-card-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #EFF6FF;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #345FFF;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-card-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background-color: #345FFF;
+  color: #FFFFFF;
+}
+
+.feature-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.feature-card-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #64748B;
+  word-break: keep-all;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .why-kodekorea-section {
+    padding: 15rem 1.5rem;
+    /* Restore desktop padding */
+  }
+
+  .why-kodekorea-title {
+    font-size: 3rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}

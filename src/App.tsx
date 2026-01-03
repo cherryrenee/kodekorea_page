@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationSection } from './components/NavigationSection';
 import { BottomUpHero } from './components/BottomUpHero';
 import { StatisticsSection } from './components/StatisticsSection';
-import { FeaturedPrograms } from './components/FeaturedPrograms';
+import { WhyKodeKorea } from './components/WhyKodeKorea';
 import { PartnersSection } from './components/PartnersSection';
 import { AboutSection } from './components/AboutSection';
 import { ReviewsSection } from './components/ReviewsSection';
@@ -15,7 +15,7 @@ export default function App() {
       <NavigationSection />
       <BottomUpHero />
       <StatisticsSection />
-      <FeaturedPrograms />
+      <WhyKodeKorea />
       <PartnersSection />
       <AboutSection />
       <ReviewsSection />
