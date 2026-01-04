@@ -58,8 +58,7 @@ export function BottomUpHero() {
 
     return (
         <section className="bottom-up-hero">
-            {/* Digital Grid Background */}
-            <div className="digital-grid-background" />
+            {/* Digital Grid Background - Moved to App.tsx wrapper */}
 
             {/* Foreground Content */}
             <div className="hero-content-container">

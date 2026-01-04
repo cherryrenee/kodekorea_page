@@ -1665,3 +1665,17 @@ html {
   inherits: false;
   initial-value: solid;
 }
+
+/* User font override */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.section-title,
+.hero-title,
+.card-title {
+  font-family: 'Anemone', sans-serif !important;
+}

@@ -8,13 +8,19 @@ import { AboutSection } from './components/AboutSection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { Footer } from './components/Footer';
 import { ChatWidget } from './components/ChatWidget';
+import { BackgroundEffect } from './components/BackgroundEffect';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-background w-full">
       <NavigationSection />
-      <BottomUpHero />
-      <StatisticsSection />
+
+      {/* Wrapper to share background between Hero and Stats */}
+      <div className="hero-stats-wrapper relative">
+        <BackgroundEffect />
+        <BottomUpHero />
+        <StatisticsSection />
+      </div>
       <WhyKodeKorea />
       <PartnersSection />
       <AboutSection />

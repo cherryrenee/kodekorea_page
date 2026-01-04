@@ -2,15 +2,17 @@
 .statistics-section-new {
   padding: 10rem 0 8rem;
   /* Mobile default */
-  background-color: #020202;
-  /* Night Mode Background */
   overflow: hidden;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
 }
 
 @media (min-width: 768px) {
   .statistics-section-new {
     padding: 20rem 0 8rem;
     /* Tablet/Desktop padding */
+    background-color: transparent;
   }
 }
 
@@ -199,24 +201,14 @@ img[src*="한국_과학_영재학교"] {
   }
 }
 
-/* Gradient Masks for fading effect at edges - matching #020202 */
+/* CSS Masking for fading effect at edges - Works with any background */
+.stats-partners-slider-wrapper {
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Removed old opaque gradient masks */
 .stats-partners-slider-wrapper::before,
 .stats-partners-slider-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.stats-partners-slider-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, #020202, transparent);
-}
-
-.stats-partners-slider-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, #020202, transparent);
+  display: none;
 }
